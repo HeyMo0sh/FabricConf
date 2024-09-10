@@ -1,0 +1,60 @@
+{
+  "version": "1.0",
+  "model": {
+    "tables": [
+      {
+        "name": "Sales",
+        "columns": [
+          {
+            "name": "Date",
+            "dataType": "DateTime"
+          },
+          {
+            "name": "Product",
+            "dataType": "String"
+          },
+          {
+            "name": "Quantity",
+            "dataType": "Int32"
+          },
+          {
+            "name": "SalesAmount",
+            "dataType": "Decimal"
+          }
+        ]
+      }
+    ]
+  },
+  "report": {
+    "pages": [
+      {
+        "name": "Sales Dashboard",
+        "visuals": [
+          {
+            "type": "BarChart",
+            "fields": {
+              "axis": "Product",
+              "value": "SalesAmount"
+            },
+            "title": "Sales by Product"
+          },
+          {
+            "type": "LineChart",
+            "fields": {
+              "axis": "Date",
+              "value": "SalesAmount"
+            },
+            "title": "Sales Trend Over Time"
+          }
+        ]
+      }
+    ]
+  },
+  "connections": [
+    {
+      "type": "csv",
+      "path": "SalesData.csv",
+      "name": "Sales Data"
+    }
+  ]
+}
